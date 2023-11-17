@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        DOCKERFILE_PATH = Dockerfile
+        DOCKER_IMAGE = openjdk:11-jre-slim
+    }
     tools {
         jdk 'jdk17'
         maven 'maven3'
@@ -30,6 +34,14 @@ pipeline {
             steps {
                 script {
                     sh 'mvn clean package'
+                }
+            }
+        }
+        stage('Docker Image build') {
+            steps {
+                script {
+                    sh " docker build -t ${DOCKER_IMAGE} -f ${DOCKERFILE_PATH} "
+
                 }
             }
         }
