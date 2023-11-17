@@ -36,7 +36,7 @@ pipeline {
         stage('Docker Image build') {
             steps {
                 script {
-                    sh ' docker build -t openjdk:11-jre-slim -f JavaQR_CI/src/Dockerfile . '
+                    sh ' docker build -t openjdk:11-jre-slim -f javaqrci/src/Dockerfile . '
 
                 }
             }
