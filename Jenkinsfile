@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKERFILE_PATH = ' JavaQR_CI/src '
+        DOCKERFILE_PATH = ' /src '
         DOCKER_IMAGE = ' openjdk:11-jre-slim '
     }
     tools {
