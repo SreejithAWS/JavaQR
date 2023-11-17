@@ -40,7 +40,7 @@ pipeline {
         stage('Docker Image build') {
             steps {
                 script {
-                    sh " docker build -t ${DOCKER_IMAGE} -f ${DOCKERFILE_PATH} "
+                    sh " docker build -t ${DOCKER_IMAGE} -f ${DOCKERFILE_PATH} ."
 
                 }
             }
