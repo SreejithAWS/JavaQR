@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:22-ea-18-oraclelinux7
 WORKDIR /webapp
 COPY ./target /webapp 
 EXPOSE 8050
