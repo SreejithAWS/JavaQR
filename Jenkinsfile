@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        DOCKERFILE_PATH = Dockerfile
-        DOCKER_IMAGE = openjdk : 11-jre-slim
+        DOCKERFILE_PATH = ' Dockerfile '
+        DOCKER_IMAGE = ' openjdk:11-jre-slim '
     }
     tools {
         jdk 'jdk17'
