@@ -33,7 +33,6 @@ pipeline {
                 }
             }
         }
-    stages {
         stage('Docker Image build') {
             steps {
                 script {
