@@ -15,7 +15,7 @@ pipeline {
         stage('checkout scm') {
             steps {
                 script {
-                    git branch: 'main', url: 'https://github.com/SreejithAWS/JavaQR.git'
+                    git branch: 'main', url: 'https://github.com/SreejithAWS/javaqr.git'
                 }
             }
         }
