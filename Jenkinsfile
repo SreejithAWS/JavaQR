@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    environment {
-        DOCKERFILE_PATH = ' /src '
-        DOCKER_IMAGE = ' openjdk:11-jre-slim '
-    }
     tools {
         jdk 'jdk17'
         maven 'maven3'
@@ -40,7 +36,7 @@ pipeline {
         stage('Docker Image build') {
             steps {
                 script {
-                    sh " docker build -t ${DOCKER_IMAGE} -f ${DOCKERFILE_PATH} ."
+                    sh ' docker build -t openjdk:11-jre-slim -f JavaQR_CI/src/Dockerfile . '
 
                 }
             }
