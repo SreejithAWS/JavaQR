@@ -4,8 +4,8 @@ pipeline {
         stage('Push to docker hub') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: '', variable: 'dockerhub_pwd')]) {
-                        sh "docker login -u sreejitheyne -p ${dockerhub_pwd}"
+                   withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpasswd')]){
+                        sh "docker login -u sreejitheyne -p ${dockerhubpasswd}"
 }
                         sh 'docker push sreejitheyne/javaqr:latest'
                 }
