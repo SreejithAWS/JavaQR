@@ -6,8 +6,8 @@ pipeline {
                 script {
                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpasswd')]){
                         sh "docker login -u sreejitheyne -p ${dockerhubpasswd}"
-                         sh 'docker push javaqr:latest'
                     }
+                        sh 'docker push sreejitheyne/openjdk:17.0.2'
                 }
             }
         }
