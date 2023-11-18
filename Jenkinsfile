@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        stage('maven Test') {
+        stage('maven test') {
             steps {
                 script {
                     sh 'mvn test'
