@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapp-deploy
+  labels:
+    app: javaapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: javaapp
+  template:
+    metadata:
+      labels:
+        app: javaapp
+    spec:
+      containers:
+      - name: javaapp
+        image: sreejitheyne/openjdk:17.0.2
+        ports:
+        - containerPort: 80
