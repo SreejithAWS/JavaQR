@@ -11,10 +11,12 @@ pipeline {
                 }
             }
         }
-        stage {
+        stage('Kubernetes Deployment') {
             steps {
-                kubernetesDeploy configs : 'Deployment.YAML' {
+                script {
+                     kubernetesDeploy configs : 'Deployment.YAML'
                 }
+                
             }
         }
 
