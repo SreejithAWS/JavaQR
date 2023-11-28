@@ -1,5 +1,10 @@
 pipeline {
     agent any 
+    environment {
+        KUBECONFIG = '/home/jith/.kube/config'
+        NAMESPACE = 'default'
+        DEPLOYMENT_FILE = '/home/project/git/javaqr/Deployment.YAML'
+    }
     stages {
         stage('Push to docker hub') {
             steps {
@@ -14,7 +19,7 @@ pipeline {
         stage('Kubernetes Deployment') {
             steps {
                 script {
-                      sh "kubectl apply -f /home/project/git/javaqr/javaqr/deployment.yaml"
+                    sh "kubectl --kubeconfig=${KUBECONFIG} --namespace=${NAMESPACE} apply -f ${DEPLOYMENT_FILE}"
 
                 }
                 
